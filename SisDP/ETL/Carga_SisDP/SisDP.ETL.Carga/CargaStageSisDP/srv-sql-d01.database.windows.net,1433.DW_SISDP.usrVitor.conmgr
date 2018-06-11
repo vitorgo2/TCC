@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="srv-sql-d01.database.windows.net,1433.DW_SISDP.usrVitor"
+  DTS:DTSID="{F637849C-831A-4419-8FDA-C1FB154D87BC}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=srv-sql-d01.database.windows.net,1433;User ID=usrVitor;Initial Catalog=DW_SISDP;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuVUyDCIY+k+scbZcRLgbTQAAAAACAAAAAAAQZgAAAAEAACAAAABMrpG0urNdbgba+sBiSIGJQBLJiz54CNoVBWWpd1cIKwAAAAAOgAAAAAIAACAAAADOX+auQa1YD9ua5iS3BcW27IK/9xGcGr7OGjWb/FGOIoAAAAC0tcTeP/+oDondSoStdOVn5L+OnbatGPmwBKVXWE1+ZOPKETA+JbIANnU+6NLwnWGA46RbmFHr2UhLayvTqmjbnlp54QtzspXLv+QSPWdvowuu32KeG5xr2uhu4CPh6PcKmsjmRHKC/qeU6u9HQAkJTF8MTb/h/rAvTvMe+0oSCkAAAACglvyNysQyDAHK9vgh4F5cSe+aS0s/6tCk0kCvOl6z7F16hFa7Y+Gju95YV4Z2YrAkMQE/dYG4qfbkcFv3TG6K</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="450fa95634464662b583ea019aa59e90" Name="Diagram1">
+        <EntityTypeShape EntityType="DW_SISDPModel.Erro" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.Cidade" Width="1.5" PointX="1.5" PointY="102" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.Crime" Width="1.5" PointX="0.75" PointY="62.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.Educacao" Width="1.5" PointX="3.75" PointY="42.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.PopulacaoPrisional" Width="1.5" PointX="3.75" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.Saude" Width="1.5" PointX="3.75" PointY="79.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.ServicosTerceirizados" Width="1.5" PointX="3.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.Tempo" Width="1.5" PointX="3.75" PointY="91.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.Trabalho" Width="1.5" PointX="3.75" PointY="88.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.UF" Width="1.5" PointX="1.5" PointY="99.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.Unidade" Width="1.5" PointX="3.75" PointY="99.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.FatoEstabelecimento" Width="1.5" PointX="6" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.FatoSistemaPenitenciario" Width="1.5" PointX="3" PointY="49.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.vwUnidade" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DW_SISDPModel.database_firewall_rules" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DW_SISDPModel.FK__Cidade__SkUF__7F2CAE86" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__Unidade__SkCidad__0114F6F8" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoEstab__SkCri__47A6A41B" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoSiste__SkCri__5224328E" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoEstab__SkEdu__45BE5BA9" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoSiste__SkEdu__503BEA1C" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoEstab__SkPop__498EEC8D" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoSiste__SkPop__540C7B00" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoEstab__SkSau__44CA3770" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoSiste__SkSau__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoEstab__SkSer__4A8310C6" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoSiste__SkSer__55009F39" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoEstab__SkDat__46B27FE2" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoSiste__SkTem__51300E55" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoEstab__SkTra__489AC854" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoSiste__SkTra__531856C7" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoEstab__SkUni__43D61337" ManuallyRouted="false" />
+        <AssociationConnector Association="DW_SISDPModel.FK__FatoSiste__SkUni__4E53A1AA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

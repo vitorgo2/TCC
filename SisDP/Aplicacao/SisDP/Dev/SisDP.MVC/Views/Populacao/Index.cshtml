@@ -1,0 +1,139 @@
+﻿@model SisDP.MVC.ViewModel.PopulacaoViewModel
+@using SisDP.MVC.ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>População Prisional</h2>
+
+<hr class="division" />
+
+<div id="main_populacao" class="container">
+    <div class="row">
+        <div id="div_sltfilters_populacao" class="col-md-2 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <select id="sltUf_populacao" class="form-control">
+                    <option>UF</option>
+                    @foreach (var item in @SisDP.MVC.ViewModel.FiltrosViewModel.Ufs)
+                    {
+                        <option class="target" value="@item.SkUF">@Html.DisplayFor(ufitem => item.UF) </option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="sltCidade_populacao" class="form-control">
+                    <option>Cidade</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="sltUnidade_populacao" class="form-control">
+                    <option>Unidade</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button id="btn_search_populacao" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-search"></span> Buscar
+                </button>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div id="gp_populacao_auxilio" class="col-md-6"></div>
+                <div id="gp_populacao_deficiente" class="col-md-6"></div>
+            </div>
+        </div>
+        <div id="coluna_graph_populacao" style="width:90%">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div id="graph_populacao_2" class="col-md-12 col-sm-12">
+        <div class="row">
+            <div id="gp_populacao_estadocivil" class="col-md-4"></div>
+            <div id="gp_populacao_movimentacao" class="col-md-4"></div>
+            <div id="gp_populacao_naturalidade" class="col-md-4"></div>
+        </div>
+    </div>
+    <hr />
+    <div id="graph_populacao_3" class="col-md-12 col-sm-12">
+        <div class="row">
+            <div id="gp_populacao_filhos" class="col-md-6"></div>
+            <div id="gp_populacao_remuneracao" class="col-md-6"></div>
+        </div>
+    </div>
+    <hr />
+    <div id="graph_populacao_4" class="col-md-12 col-sm-12">
+        <div class="row">
+            <div id="gp_populacao_idade" class="col-md-6"></div>
+            <div id="gp_populacao_raca" class="col-md-6"></div>
+        </div>
+    </div>
+    <hr />
+    <div id="graph_populacao_4" class="col-md-12 col-sm-12">
+        <div class="row">
+            <div id="gp_populacao_regime" class="col-md-12"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+            (function(){
+                "use strict";
+
+                var cidades = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(FiltrosViewModel.Cidades));
+                var unidades = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(FiltrosViewModel.Unidades));
+
+                var selectUf = document.getElementById('sltUf_populacao');
+                var selectCidade = document.getElementById('sltCidade_populacao');
+                var selectUnidade = document.getElementById('sltUnidade_populacao');
+
+                //Filtro de Cidades por UF
+                selectUf.addEventListener('change', function(event){
+                    var cidadesUF = cidades.filter(function(cidade){
+                        return cidade.SkUF == event.target.options[event.target.selectedIndex].value;
+                    });
+
+                    selectCidade.length = 1;
+                    selectUnidade.length = 1;
+
+                    var dummy = document.createDocumentFragment(),
+                        option;
+
+                    cidadesUF.forEach(function(cidade){
+                        option = document.createElement('option');
+                        option.value = cidade.SkCidade;
+                        option.innerText = cidade.Cidade;
+                        dummy.appendChild(option);
+                    });
+
+                    selectCidade.appendChild(dummy);
+                });
+
+                //Filtro de Unidades por Cidade
+                selectCidade.addEventListener('change', function(event){
+                    var unidadesCidade = unidades.filter(function(unidade){
+                        return unidade.SkCidade == event.target.options[event.target.selectedIndex].value;
+                    });
+
+                    selectUnidade.length = 1;
+
+                    var dummy = document.createDocumentFragment(),
+                        option;
+
+                    unidadesCidade.forEach(function(unidade){
+                        option = document.createElement('option');
+                        option.value = unidade.SkUnidade;
+                        option.innerText = unidade.NomeUnidade;
+                        dummy.appendChild(option);
+                    });
+
+                    selectUnidade.appendChild(dummy);
+                });
+
+            })();
+
+    </script>
+}

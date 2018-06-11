@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisDP.Service", "SisDP.Service\SisDP.Service.csproj", "{45C9EC43-604A-4256-86DC-9F5B1D063306}"
+	ProjectSection(ProjectDependencies) = postProject
+		{19D45444-3B3D-4D3F-B603-240267777B8B} = {19D45444-3B3D-4D3F-B603-240267777B8B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisDP.MVC", "SisDP.MVC\SisDP.MVC.csproj", "{7BEBD7BC-A688-4AD6-AAA9-01EC19441E3F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45C9EC43-604A-4256-86DC-9F5B1D063306} = {45C9EC43-604A-4256-86DC-9F5B1D063306}
+		{19D45444-3B3D-4D3F-B603-240267777B8B} = {19D45444-3B3D-4D3F-B603-240267777B8B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisDP.Data", "SisDP.Data\SisDP.Data.csproj", "{19D45444-3B3D-4D3F-B603-240267777B8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45C9EC43-604A-4256-86DC-9F5B1D063306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C9EC43-604A-4256-86DC-9F5B1D063306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C9EC43-604A-4256-86DC-9F5B1D063306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C9EC43-604A-4256-86DC-9F5B1D063306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BEBD7BC-A688-4AD6-AAA9-01EC19441E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BEBD7BC-A688-4AD6-AAA9-01EC19441E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BEBD7BC-A688-4AD6-AAA9-01EC19441E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BEBD7BC-A688-4AD6-AAA9-01EC19441E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D45444-3B3D-4D3F-B603-240267777B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D45444-3B3D-4D3F-B603-240267777B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D45444-3B3D-4D3F-B603-240267777B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D45444-3B3D-4D3F-B603-240267777B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://vitorsql.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SisDP.Service\\SisDP.Service.csproj
+		SccProjectName1 = SisDP.Service
+		SccLocalPath1 = SisDP.Service
+		SccProjectUniqueName2 = SisDP.MVC\\SisDP.MVC.csproj
+		SccProjectName2 = SisDP.MVC
+		SccLocalPath2 = SisDP.MVC
+		SccProjectUniqueName3 = SisDP.Data\\SisDP.Data.csproj
+		SccProjectName3 = SisDP.Data
+		SccLocalPath3 = SisDP.Data
+	EndGlobalSection
+EndGlobal

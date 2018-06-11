@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SisDP - Sistema de Dados Penitenciários</title>
+    @Styles.Render("~/Content/styles")
+    @Scripts.Render("~/Scripts/modernizr")
+    @Styles.Render("~/Content/graph_css")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink(" ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style = "background: url('" + Url.Content("~/Imagens/sisDPResumeLogo.png") + "') no-repeat center; display:inline-block; height:48px;width:52px;" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Educação", "Index", "Educacao")</li>                  
+                    <li>@Html.ActionLink("Servidores", "Index", "Servidor")</li>
+                    <li>@Html.ActionLink("Saúde", "Index", "Saude")</li>
+                    <li>@Html.ActionLink("Crimes/Penas", "Index", "Crime")</li>
+                    <li>@Html.ActionLink("População Prisional", "Index", "Populacao")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer align="center">
+            <div id="ifg">
+                <div id="imgifg" class="img-responsive" align="center">
+                    <img src="~/Imagens/ifg2015.png" width="102" height="130" />
+                </div>
+            </div>
+            <p>&copy; @DateTime.Now.Year - Sistema de Dados Penitenciários - Todos os Direitos Reservados</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/Scripts/jqueryMin")
+    @Scripts.Render("~/Scripts/bootstrap")
+    @Scripts.Render("~/Scripts/hightcharts")
+    @Scripts.Render("~/Scripts/highcharts-more")
+    @Scripts.Render("~/Scripts/funnel")
+    @Scripts.Render("~/Scripts/exporting")
+    @Scripts.Render("~/Scripts/export-data")
+    @Scripts.Render("~/Scripts/graph_educacao")
+    @Scripts.Render("~/Scripts/graph_saude")
+    @Scripts.Render("~/Scripts/graph_servidor")
+    @Scripts.Render("~/Scripts/graph_crime")
+    @Scripts.Render("~/Scripts/graph_populacao")
+    @Scripts.Render("~/Scripts/graph_util")
+    @Scripts.Render("~/Scripts/datatable")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

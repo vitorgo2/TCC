@@ -1,0 +1,120 @@
+﻿@model SisDP.MVC.ViewModel.EducacaoViewModel
+@using SisDP.MVC.ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Educação</h2>
+
+<hr class="division" />
+
+<div id="main" class="container">
+    <div class="row">
+        <div id="div_sltfilters" class="col-md-2 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <select id="sltUf" class="form-control">
+                    <option>UF</option>
+                    @foreach (var item in @SisDP.MVC.ViewModel.FiltrosViewModel.Ufs)
+                    {
+                        <option class="target" value="@item.SkUF">@Html.DisplayFor(ufitem => item.UF) </option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="sltCidade" class="form-control">
+                    <option>Cidade</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="sltUnidade" class="form-control">
+                    <option>Unidade</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button id="btn_search" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-search"></span> Buscar
+                </button>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div id="gp_edu_bibliotecas" class="col-md-4"></div>
+                <div id="gp_edu_atveducacionais" class="col-md-4"></div>
+                <div id="gp_edu_infgrauinstrucao" class="col-md-4"></div>
+            </div>
+        </div>
+
+        <div id="coluna_graph" style="width:90%">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div id="saude" class="col-md-12 col-sm-12">
+        <div class="row">
+            <div id="gp_edu_escolaridade" class="col-md-8"></div>
+            <div id="gp_edu_salaprofessor" class="col-md-4"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+        (function(){
+            "use strict";
+
+            var cidades = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(FiltrosViewModel.Cidades));
+            var unidades = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(FiltrosViewModel.Unidades));
+
+            var selectUf = document.getElementById('sltUf');
+            var selectCidade = document.getElementById('sltCidade');
+            var selectUnidade = document.getElementById('sltUnidade');
+
+            //Filtro de Cidades por UF
+            selectUf.addEventListener('change', function(event){
+                var cidadesUF = cidades.filter(function(cidade){
+                    return cidade.SkUF == event.target.options[event.target.selectedIndex].value;
+                });
+
+                selectCidade.length = 1;
+                selectUnidade.length = 1;
+
+                var dummy = document.createDocumentFragment(),
+                    option;
+
+                cidadesUF.forEach(function(cidade){
+                    option = document.createElement('option');
+                    option.value = cidade.SkCidade;
+                    option.innerText = cidade.Cidade;
+                    dummy.appendChild(option);
+                });
+
+                selectCidade.appendChild(dummy);
+            });
+
+            //Filtro de Unidades por Cidade
+            selectCidade.addEventListener('change', function(event){
+                var unidadesCidade = unidades.filter(function(unidade){
+                    return unidade.SkCidade == event.target.options[event.target.selectedIndex].value;
+                });
+
+                selectUnidade.length = 1;
+
+                var dummy = document.createDocumentFragment(),
+                    option;
+
+                unidadesCidade.forEach(function(unidade){
+                    option = document.createElement('option');
+                    option.value = unidade.SkUnidade;
+                    option.innerText = unidade.NomeUnidade;
+                    dummy.appendChild(option);
+                });
+
+                selectUnidade.appendChild(dummy);
+            });
+
+        })();
+
+    </script>
+}

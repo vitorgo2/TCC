@@ -1,0 +1,35 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewBag.Title = "SearchUF";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchUF</h2>
+
+<div class="row">
+    <div id="graphs">
+        <div id="gp_edu_atveducacionais"> Aqui </div>
+        <button id="plain">Plain</button>
+        <button id="inverted">Inverted</button>
+        <button id="polar">Polar</button>
+    </div>
+</div>
+
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/hightcharts")
+    @Scripts.Render("~/bundles/highcharts-more")
+    @Scripts.Render("~/bundles/exporting")
+    @Scripts.Render("~/bundles/jquery2.0.3")
+    @Scripts.Render("~/bundles/graph_educacao")
+
+
+    <script type="text/javascript">
+
+        //var jresult = JsonConvert.SerializeObject(Model);
+
+
+    </script>
+
+}
